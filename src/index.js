@@ -1,35 +1,21 @@
-import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
-import {Paper, AppBar, Card} from 'material-ui'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import {AppContainer} from "react-hot-loader";
+import React, {Component} from "react";
+import ReactDOM from "react-dom";
 import injectTapEventPlugin from "react-tap-event-plugin";
+import App from "./app";
 
-injectTapEventPlugin()
+injectTapEventPlugin();
 
-export default class Home extends Component {
-  render(){
-    return (<MuiThemeProvider>
-      <div>
-        <AppBar
-  title="Hack Your Mom"
-  iconClassNameRight="muidocs-icon-navigation-expand-more"
-  />
-<Paper style={{ display: 'flex', flexDirection: 'column', alignItems:'center', height:'100vh'}}>
-        <Card style={{ marginTop: '10vh', padding: '10px', height:'90vh', width: '70vw'}}>
-        <article>
-          Hacking your mom for her own good jah
-        </article>
-        <article>
-          Hacking your mom for her own good jah
-        </article>
-        <article>
-          Hacking your mom for her own good jah
-        </article>
-      </Card>
-      </Paper>
-    </div>
-     </MuiThemeProvider>)
-  }
+const renderApp = () => {
+    ReactDOM.render(
+        <AppContainer>
+            <App />
+        </AppContainer>,
+        document.getElementById("app")
+    );
 }
+renderApp(); // Renders App on init
 
-ReactDOM.render(<Home/>, document.getElementById('app'))
+if (module.hot) {
+    module.hot.accept("./app", renderApp);
+}
