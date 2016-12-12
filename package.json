@@ -1,0 +1,23 @@
+{
+  "name": "hack-your-mom",
+  "version": "1.0.0",
+  "description": "ethical hacking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hacking",
+    "security"
+  ],
+  "author": "Kayla Fitzsimmons & Phil Gebhardt",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.20.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}
